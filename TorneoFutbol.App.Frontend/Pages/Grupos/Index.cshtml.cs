@@ -7,19 +7,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using TorneoFutbol.App.Dominio;
 using TorneoFutbol.App.Persistencia;
 
-namespace TorneoFutbol.App.Frontend.Pages.Jugadores
+namespace TorneoFutbol.App.Frontend.Pages.Grupos
 {
     public class IndexModel : PageModel
     {
-        private readonly IRepositorioJugadores _repoJugador;
-        public IEnumerable <Jugador> jugador {get; set;}
-        public Jugador Jugador{get; set;}
+        private readonly IRepositorioGrupos _repoGrupo;
+        public IEnumerable <Grupo> grupo {get; set;}
+        public Grupo Grupo{get; set;}
         public string gActual{get; set;}
         
 
-        public IndexModel(IRepositorioJugadores repoJugador)
+        public IndexModel(IRepositorioGrupos repoGrupo)
         {
-            _repoJugador = repoJugador;
+            _repoGrupo = repoGrupo;
         }
 
         public void OnGet(string g)
@@ -28,12 +28,12 @@ namespace TorneoFutbol.App.Frontend.Pages.Jugadores
             {
                 gActual = "";
                 
-                jugador = _repoJugador.GetAllJugador();
+                grupo = _repoGrupo.GetAllGrupos();
             }
             else
             {
                 gActual = g;
-                jugador = _repoJugador.GetJugadoresNombre(g);
+                grupo = _repoGrupo.GetGrupoNombre(g);
             }
             
         }

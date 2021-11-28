@@ -1,0 +1,77 @@
+﻿@page
+@using TorneoFutbol.App.Dominio
+@model TorneoFutbol.App.Frontend.Pages.Migrantes.CreateModel
+@{
+}
+<h1>Nuevo Migrante</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="migrante.Nombre"></label>
+        <input asp-for="migrante.Nombre" class="form-control" placeholder="Ingrese Su Nombre">
+        <span class="text-danger" asp-validation-for="migrante.Nombre"></span>
+    </div> 
+    <div class="form-group">
+        <label asp-for="migrante.Apellidos"></label>
+        <input asp-for="migrante.Apellidos" class="form-control" placeholder="Ingrese Sus Apellidos">
+        <span class="text-danger" asp-validation-for="migrante.Apellidos"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="migrante.Tipo_Identificacion"></label>
+        <input asp-for="migrante.Tipo_Identificacion" class="form-control" placeholder="Ingrese el Tipo de Identificación">
+        <span class="text-danger" asp-validation-for="migrante.Tipo_Identificacion"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="migrante.Numero_Identificacion"></label>
+        <input asp-for="migrante.Numero_Identificacion" class="form-control" placeholder="Ingrese Su Número de Identificación">
+        <span class="text-danger" asp-validation-for="migrante.Numero_Identificacion"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="migrante.Fecha_Nacimiento"></label>
+        <input asp-for="migrante.Fecha_Nacimiento" class="form-control" placeholder="Ingrese Su Fecha de Nacimiento">
+        <span class="text-danger" asp-validation-for="migrante.Fecha_Nacimiento"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="migrante.Direccion_Electronica"></label>
+        <input asp-for="migrante.Direccion_Electronica" class="form-control" placeholder="Ingrese su Dirección Electronica">
+        <span class="text-danger" asp-validation-for="migrante.Direccion_Electronica"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="migrante.Teléfono"></label>
+        <input asp-for="migrante.Teléfono" class="form-control" placeholder="Ingrese su Número de teléfono">
+        <span class="text-danger" asp-validation-for="migrante.Teléfono"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="migrante.Dirección_Actual"></label>
+        <input asp-for="migrante.Dirección_Actual" class="form-control" placeholder="Ingrese su Dirección Actual">
+        <span class="text-danger" asp-validation-for="migrante.Dirección_Actual"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="migrante.Ciudad"></label>
+        <input asp-for="migrante.Ciudad" class="form-control" placeholder="Ingrese su Ciudad Actual">
+        <span class="text-danger" asp-validation-for="migrante.Ciudad"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="migrante.Situación_Laboral"></label>
+        <input asp-for="migrante.Situación_Laboral" class="form-control" placeholder="Ingrese su Situación Laboral Actual">
+        <span class="text-danger" asp-validation-for="migrante.Situación_Laboral"></span>
+
+    </div>
+     
+    <button type="submit" class="estilocrear">
+
+        <span id ="span1"></span>
+        <span id ="span2"></span>
+        <span id ="span3"></span>
+        <span id ="span4"></span>
+        Crear Migrante
+    </button> 
+</form>
+<br><br><a class="btn btn-secondary" asp-page="./Index">Volver</a>

@@ -1,6 +1,6 @@
 ﻿@page
 @using TorneoFutbol.App.Dominio
-@model TorneoFutbol.App.Frontend.Pages.Municipios.IndexModel
+@model TorneoFutbol.App.Frontend.Pages.Migrantes.IndexModel
 @{
 }
 <form method="get">
@@ -14,24 +14,26 @@
 </div>
     
 </form>
-<h1>Listado de Municipios</h1>
+<h1>Listado de Migrantes</h1>
 
 
 <table class="table">
     <thead class="thead-dark">
         <tr>
+            <th scope="col">Cedula</th>
             <th scope="col">Nombre</th>
             <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var municipio in Model.municipio)
+        @foreach (var migrante in Model.migrante)
         {
             <tr>
-                <td>@municipio.Nombre</td>
+                <td>@migrante.Numero_Identificacion</td>
+                <td>@migrante.Nombre</td>
             <td>
-                <a class="btn btn-secondary" asp-page="./Details" asp-route-id="@municipio.Id">Detalle</a>
-                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@municipio.Id">Editar</a>
+                <a class="btn btn-secondary" asp-page="./Details" asp-route-id="@migrante.Id">Detalle</a>
+                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@migrante.Id">Editar</a>
             </td>
             </tr>
         }
@@ -39,4 +41,4 @@
     </tbody>
     
 </table>
-<a class="btn btn-primary" asp-page="./Create">Crear Municipio</a>
+<a class="btn btn-primary" asp-page="./Create">Crear Migrante</a>

@@ -1,0 +1,65 @@
+﻿@page
+@model TorneoFutbol.App.Frontend.Pages.Migrantes.DetailsModel
+@{
+}
+<h1>Detalle del Migrante</h1>
+<table class="table table-striped">
+        <tr>
+            <th scope="col">Nombre</th>
+            <td>@Model.migrante.Nombre</td>
+        </tr>
+        <tr>
+            <th scope="col">Apellidos</th>
+            <td>@Model.migrante.Apellidos</td>
+        </tr>
+        <tr>
+            <th scope="col">Tipo_Identificacion</th>
+            <td>@Model.migrante.Tipo_Identificacion</td>
+        </tr>
+        <tr>
+            <th scope="col">Numero_Identificacion</th>
+            <td>@Model.migrante.Numero_Identificacion</td>
+        </tr>
+        <tr>
+            <th scope="col">Fecha_Nacimiento</th>
+            <td>@Model.migrante.Fecha_Nacimiento</td>
+        </tr>
+        <tr>
+            <th scope="col">Direccion_Electronica</th>
+            <td>@Model.migrante.Direccion_Electronica</td>
+        </tr>
+        <tr>
+            <th scope="col">Teléfono</th>
+            <td>@Model.migrante.Teléfono</td>
+        </tr>
+        <tr>
+            <th scope="col">Dirección_Actual</th>
+            <td>@Model.migrante.Dirección_Actual</td>
+        </tr>
+        <tr>
+            <th scope="col">Ciudad</th>
+            <td>@Model.migrante.Ciudad</td>
+        </tr>
+        <tr>
+            <th scope="col">Situación_Laboral</th>
+            <td>@Model.migrante.Situación_Laboral</td>
+        </tr>
+        <tr>
+            <th scope="col">Grupo</th>
+            @if (Model.migrante.Grupo == null)
+            {
+                <th>
+                    <a class="btn btn-secondary" asp-page="./AddGrupos" asp-route-id="@Model.migrante.Id">
+                        Asignar Grupo
+                    </a>
+                </th>
+            }
+            else
+            {
+                <td>@Model.migrante.Grupo.Nombre_Grupo</td>
+            }
+            
+        </tr> 
+</table>
+
+<a class="btn btn-secondary" asp-page="./Index">Volver</a>

@@ -7,26 +7,26 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using TorneoFutbol.App.Dominio;
 using TorneoFutbol.App.Persistencia;
 
-namespace TorneoFutbol.App.Frontend.Pages.Jugadores
+namespace TorneoFutbol.App.Frontend.Pages.Grupos
 {
     public class CreateModel : PageModel
     {
-        private readonly IRepositorioJugadores _repoJugador;
-        public Jugador jugador {get; set;}
-        public CreateModel(IRepositorioJugadores repoJugador)
+        private readonly IRepositorioGrupos _repoGrupo;
+        public Grupo grupo {get; set;}
+        public CreateModel(IRepositorioGrupos repoGrupos)
         {
-            _repoJugador = repoJugador;
+            _repoGrupo = repoGrupos;
         }
         public void OnGet()
         {
-             jugador = new Jugador();
+             grupo = new Grupo();
         }
 
-        public IActionResult OnPost(Jugador jugador)
+        public IActionResult OnPost(Grupo grupo)
         {
             if (ModelState.IsValid)
             {
-                _repoJugador.AddJugador(jugador);
+                _repoGrupo.AddGrupo(grupo);
                 return RedirectToPage("Index");
             }
 

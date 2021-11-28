@@ -8,17 +8,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using TorneoFutbol.App.Dominio;
 using TorneoFutbol.App.Persistencia;
 
-namespace TorneoFutbol.App.Frontend.Pages.Municipios
+namespace TorneoFutbol.App.Frontend.Pages.Migrantes
 {
     public class IndexModel : PageModel
     {
-        private readonly IRepositorioMunicipios _repoMunicipio;
-        public IEnumerable <Municipio> municipio {get; set;}
+        private readonly IRepositorioMigrantes _repoMigrante;
+        public IEnumerable <Migrante> migrante {get; set;}
         public string gActual{get; set;}
 
-        public IndexModel(IRepositorioMunicipios repoMunicipio)
+        public IndexModel(IRepositorioMigrantes repoMigrante)
         {
-            _repoMunicipio = repoMunicipio;
+            _repoMigrante = repoMigrante;
         }
         public void OnGet(string g)
         {
@@ -26,12 +26,12 @@ namespace TorneoFutbol.App.Frontend.Pages.Municipios
             {
                 gActual = "";
                 
-                municipio = _repoMunicipio.GetAllMunicipios();
+                migrante = _repoMigrante.GetAllMigrante();
             }
             else
             {
                 gActual = g;
-                municipio = _repoMunicipio.GetMunicipioNombre(g);
+                migrante = _repoMigrante.GetMigranteNombre(g);
             }
         }
     }

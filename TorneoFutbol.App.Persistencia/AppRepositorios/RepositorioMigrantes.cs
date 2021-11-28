@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using TorneoFutbol.App.Dominio;
 
 namespace TorneoFutbol.App.Persistencia
@@ -30,9 +31,13 @@ namespace TorneoFutbol.App.Persistencia
             return _appContext.Migrantes;
         }
 
-        Migrante IRepositorioMigrantes.GetMigrante(int idMigrante)
+        Migrante IRepositorioMigrantes.GetMigrante(int IdMigrante)
         {
-            return _appContext.Migrantes.FirstOrDefault(m=>m.Id==idMigrante);
+           var migrante = _appContext.Migrantes
+                .Where(p => p.Id == IdMigrante)
+                .Include(p => p.Grupo)
+                .FirstOrDefault();
+            return migrante;
             
         }
 

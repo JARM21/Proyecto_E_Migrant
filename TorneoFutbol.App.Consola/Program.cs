@@ -16,8 +16,8 @@ namespace TorneoFutbol.App.Consola
             Console.WriteLine("Hello World!");
             //AddMigrante();
             //AddEntidad();
-            AddServicio();
-            //BuscarDirectoresTecnicos(1);
+            //AddServicio();
+            //BuscarMigrantes(1);
 
         }
 

@@ -27,8 +27,8 @@ namespace TorneoFutbol.App.Frontend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddSingleton<IRepositorioMunicipios, RepositorioMunicipios>();
-            services.AddSingleton<IRepositorioJugadores, RepositorioJugadores>();
+            services.AddSingleton<IRepositorioMigrantes, RepositorioMigrantes>();
+            services.AddSingleton<IRepositorioGrupos, RepositorioGrupos>();
             services.AddSingleton<IRepositorioArbitros, RepositorioArbitros>();
             services.AddSingleton<IRepositorioDirectorTecnico, RepositorioDirectorTecnico>();
             services.AddSingleton<IRepositorioEquipos, RepositorioEquipos>();

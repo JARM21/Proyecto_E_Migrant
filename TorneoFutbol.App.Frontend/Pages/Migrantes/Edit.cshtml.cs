@@ -7,20 +7,20 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using TorneoFutbol.App.Dominio;
 using TorneoFutbol.App.Persistencia;
 
-namespace TorneoFutbol.App.Frontend.Pages.Municipios
+namespace TorneoFutbol.App.Frontend.Pages.Migrantes
 {
     public class EditModel : PageModel
     {
-        private readonly IRepositorioMunicipios _repoMunicipio;
-        public Municipio municipio {get; set;}
-        public EditModel(IRepositorioMunicipios repoMunicipio)
+        private readonly IRepositorioMigrantes _repoMigrante;
+        public Migrante migrante {get; set;}
+        public EditModel(IRepositorioMigrantes repoMigrante)
         {
-            _repoMunicipio = repoMunicipio;
+            _repoMigrante = repoMigrante;
         }
         public IActionResult OnGet(int id)
         {
-            municipio = _repoMunicipio.GetMunicipio(id);
-            if (municipio == null)
+            migrante = _repoMigrante.GetMigrante(id);
+            if (migrante == null)
             {
                 return NotFound();
             }
@@ -30,9 +30,9 @@ namespace TorneoFutbol.App.Frontend.Pages.Municipios
             }
         }
 
-        public IActionResult OnPost(Municipio municipio)
+        public IActionResult OnPost(Migrante migrante)
         {
-            _repoMunicipio.UpdateMunicipio(municipio);
+            _repoMigrante.UpdateMigrante(migrante);
             return RedirectToPage("Index");
         }
     }
